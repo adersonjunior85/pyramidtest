@@ -1,0 +1,2 @@
+## !! Could not determine repository location
+apptest==0.0
