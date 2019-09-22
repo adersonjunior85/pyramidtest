@@ -1,0 +1,8 @@
+README.md
+setup.py
+apptest.egg-info/PKG-INFO
+apptest.egg-info/SOURCES.txt
+apptest.egg-info/dependency_links.txt
+apptest.egg-info/entry_points.txt
+apptest.egg-info/requires.txt
+apptest.egg-info/top_level.txt

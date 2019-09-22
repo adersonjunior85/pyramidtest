@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="${request.static_url('apptest:assets/main.css')}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+    <body>
+        <header class="w3-container w3-dark-grey">
+            <h1>Home</h1>
+        </header>
+        <div id="header" class="w3-sidebar w3-bar-block w3-light-grey w3-card">
+            <a href="/" class="w3-bar-item w3-button">Home</a>
+            <a href="/create" class="w3-bar-item w3-button">Create Video</a>
+            <a href="/trending" class="w3-bar-item w3-button">Trending</a>
+        </div>
+        <div id="content">
+            <h1 st>New Videos</h1>
+
+            <div class="video" tal:repeat="video videos">
+                <h2>${video.name}</h2>
+                <a href="/video?id=${str(video['_id'])}">
+                    <img tal:condition="video.src_id" src="https://img.youtube.com/vi/${video.src_id}/hqdefault.jpg" />
+                    <img tal:condition="not video.src_id" src="${request.static_url('apptest:assets/thumbnail.jpg') }" />
+                </a>
+                <div>
+                    <p class="span-home">Theme: ${video.theme}</p>
+                    <p class="span-home">${video.likes} 👍🏽</p>
+                    <p class="span-home">${video.dislikes} 👎🏼</p>
+                </div>
+            </div>
+        </div>
+    <div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+</div>
+
+    </body>
+</html>

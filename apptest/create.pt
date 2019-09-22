@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Create Video</title>
+        <link rel="stylesheet" type="text/css" href="${request.static_url('apptest:assets/main.css')}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+    <body>
+        <header class="w3-container w3-dark-grey">
+            <h1>Create Videos</h1>
+        </header>
+        <div id="header" class="w3-sidebar w3-bar-block w3-light-grey w3-card">
+            <a href="/" class=  "w3-bar-item w3-button">Home</a>
+            <a href="/create" class="w3-bar-item w3-button">Create Video</a>
+            <a href="/trending" class="w3-bar-item w3-button">Trending</a>
+        </div>
+        <div id="content">
+            <h1>Create Video</h1>
+            <div id="create_status" tal:condition="inserting">
+                <h1 tal:condition="error">Error at creating video.</h1>
+                <h1 tal:condition="not error">Video created with success.</h1>
+            </div>
+            <form method="POST"
+                  action="${request.current_route_url()}">
+                <label for="name">Video Name</label>
+                <input name="name"/>
+                <label for="src">Youtube URL</label>
+                <input name="src"/>
+                <label for="theme">Video Theme</label>
+                <input name="theme" list="theme_list">
+                <datalist id="theme_list">
+                    <option tal:repeat="theme themes" value="${theme}">${theme}</option>
+                </datalist>
+
+                <input type="submit" name="form.add" value="ADD"/>
+            </form>
+        </div>
+    </body>
+</html>
