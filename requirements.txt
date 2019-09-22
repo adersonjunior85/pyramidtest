@@ -1,2 +1,0 @@
-## !! Could not determine repository location
-demoapp==0.0
